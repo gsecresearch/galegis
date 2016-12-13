@@ -192,5 +192,13 @@ rett2<- data.frame(Filer1=exf2,Filer2=exa2)
 returna<- list(Return_1=rettt,Return_2=rett2)
 #STAGED:  Add this to the query function.  
 
+write.table(rettt, "C:/git/galegis/Data/Individual/return_johnson1.csv")
+write.table(rett2, "C:/git/galegis/Data/Individual/return_johnson2.csv")
+#This is the link to corresponding query http://media.ethics.ga.gov/search/Financial/Financial_ByName.aspx
+
+#Double check the write.
+cdc<- Phaser("C:/git/galegis/Data/Individual/return_johnson2.csv")
+cdc
 ```
 
+Obviously these can be geocoded pretty easily.  
