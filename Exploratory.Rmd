@@ -88,8 +88,109 @@ nl2<- gsub("font-size:Small;font-weight:bold;width:30%;","",nl)
 nl3<- gsub("background-color:#CCCCCC;font-weight:bold;width:150px;","",nl2)
 nl4<- gsub("style=","",nl3)
 nl5<- gsub("</span>","",nl4)
-nl5
+nl6<- gsub("\\","",nl5,fixed=T)
+nl7<- gsub(">","",nl6)
+nl7
 
 ```
 
-So for Josh Edgeskin, that's EDGE , ARTHUR "SKIN" on the webpage. I did lose the addresses by focusing on the names.  
+So for Josh Edgeskin, that's EDGE , ARTHUR "SKIN" on the webpage. I did lose the addresses by focusing on the names.
+
+
+
+
+COMMIT.
+=====================
+Attempting to pull down HTML.
+```{r}
+si<- getURL("http://media.ethics.ga.gov/search/Lobbyist/Lobbyist_Groupsearchresults.aspx?&Year=2006%20and%20Newer&GroupName=&GroupNameContains=gas")
+
+ssi<- scan(si,what="\n")
+ssi
+```
+
+Not successful.  
+From [Stack](http://stackoverflow.com/questions/1395528/scraping-html-tables-into-r-data-frames-using-the-xml-package):
+```{r}
+library(XML)
+tu<- "http://media.ethics.ga.gov/search/Lobbyist/Lobbyist_Groupsearchresults.aspx?&Year=2006%20and%20Newer&GroupName=&GroupNameContains=gas"
+tab<- readHTMLTable(tu)
+```
+Interesting...
+```{r}
+str(tab)
+```
+
+try v4
+or 
+```{r}
+lob<- tab$ctl00_ContentPlaceHolder1_Results2$Lobbyist
+#Pulling the whole thing for a data frame
+xma<- Judo(tab$ctl00_ContentPlaceHolder1_Results2,c(1,3))
+xma$Lobbyist
+```
+
+For the lobbyist names, a little white space handing and we're good.  
+
+**ANALYSIS OUTCOME**  Looks like the XML package with the readHTMLtable command is going to be the way to go for scraping the URLs.  
+
+
+Construct a search query
+============================
+The queries look pretty simple.  Trying [this page](http://media.ethics.ga.gov/search/Financial/Financial_ByName.aspx).  Searched for last name **Johnson**, other fields blank.  
+
+```{r}
+query_result<-"http://media.ethics.ga.gov/search/Financial/Financial_BYNameResults.aspx?LastName=Johnson&FirstName=&City=&FilerID=&OfficeStatus=0&OfficeName=&District=&Post=&Circuit=&Division=&Type=Name"
+#So, we should be able to construct a URL like this one based on various name searches, then feed that to the readHTMLtable function.  
+```
+
+```{r}
+ConstructFinancialQuery<- 
+  function(lastname=NULL, firstname=NULL, city=NULL)   { 
+  library(XML)
+  full_url<- paste("http://media.ethics.ga.gov/search/Financial/Financial_BYNameResults.aspx?LastName=",lastname,"&FirstName=",firstname,"&City=",city,"&FilerID=&OfficeStatus=0&OfficeName=&District=&Post=&Circuit=&Division=&Type=Name",sep="")
+full_url
+   html_result<- readHTMLTable(full_url)
+  html_result}
+   #xk<- data.frame(query=full_url,result=html_result)
+  #xk
+#DIAGNOSING - RETURN THE QUERY
+```
+
+The **ConstructFinancialQuery** function should take lastname fn and city as arguments, construct the query , and return the query and the html result.  
+
+```{r}
+cfq<- ConstructFinancialQuery("Johnson","Lisa","Atlanta")
+```
+Run successful, checking output.  
+```{r}
+str(cfq)
+```
+
+If we detect "Search Returned No Results." we can go ahead and cancel whatever extraction function is running.  Trying an easier search term to see what results.  We may be able to increment multiple page results as well. 
+
+```{r}
+q2<- ConstructFinancialQuery("Johnson")
+#Trying NULL default values for the parameters
+```
+Run successful.  
+
+```{r}
+str(q2)
+```
+
+Looks like the sixth and seventh list elements return the results.
+
+```{r}
+extractFiler<- q2$ctl00_ContentPlaceHolder1_GridView1$Filer
+extractAddress<- q2$ctl00_ContentPlaceHolder1_GridView1$Address
+exf2<- q2[[6]]$V2
+exa2<- q2[[6]]$V3
+
+rettt<- data.frame(Filer1=extractFiler,Filer2=extractAddress)
+rett2<- data.frame(Filer1=exf2,Filer2=exa2)
+returna<- list(Return_1=rettt,Return_2=rett2)
+#STAGED:  Add this to the query function.  
+
+```
+
