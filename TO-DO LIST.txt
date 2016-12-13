@@ -1,0 +1,5 @@
+TO-DO LIST:
+- Configure script to pull down entries from the database systematically
+ -> IN PROGRESS:  Working on the lobbyist search results page for example http://media.ethics.ga.gov/search/Lobbyist/Lobbyist_Groupsearchresults.aspx?&Year=2006%20and%20Newer&GroupName=Aetna&GroupNameContains=
+ 
+ Was able to yield a decent set of name-company pairs.  Combined with a mass search, we can probably comb the site pretty well.  

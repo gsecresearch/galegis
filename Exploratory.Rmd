@@ -1,0 +1,95 @@
+---
+title: "Georgia Legislature - Exploratory"
+output: html_notebook
+---
+
+[Example URL for Corrections Corporation of America Lobbying Group](http://media.ethics.ga.gov/search/Lobbyist/Lobbyist_Groupsearchresults.aspx?&Year=2006%20and%20Newer&GroupName=Corrections&GroupNameContains=)
+
+I'd like to pull info from this URL straight into R for extraction.  Specifically I want the names of the individuals associated with different lobbying groups. 
+
+```{r}
+library(RCurl)
+library(curl)
+request<- curl_fetch_memory("http://media.ethics.ga.gov/search/Lobbyist/Lobbyist_Groupsearchresults.aspx?&Year=2006%20and%20Newer&GroupName=Corrections&GroupNameContains=")
+str(request)
+
+```
+
+```{r}
+sample(request$content,200)
+```
+
+Looks like it's sending data in bytes
+
+```{r}
+parse_headers(request$headers)
+```
+
+```{r}
+library(xlsx)
+PAC<- read.xlsx("C:/git/galegis/Data/PAC_List.xls",
+  sheetIndex=1)
+#Run failed.
+```
+```{r}
+
+PAC<- Phaser("C:/git/galegis/Data/PAClist_csv.csv")
+str(PAC)
+```
+
+If we can figure out how to pull down the HTML page for inspection, that will be a quick way to pull the names.
+
+```{r}
+example<- readLines("C:/git/galegis/Data/HTML/Lobbyist Search Results.html")
+sample(example,50)
+```
+
+Reportsummary.aspx looks like something you might want.  
+
+```{r}
+example
+```
+Other files of interest:
+Lobbyist_ByName.aspx
+
+Lines 389 - 392 have one name:
+
+```{r}
+example[389:392]
+```
+
+
+```{r}
+ss<- scan("C:/git/galegis/Data/HTML/Lobbyist Search Results.html",
+  what="\n")
+ss[1:50]
+```
+
+Looks like scan is a little cleaner.  Trying to quickly identify the lines containing names.
+
+
+```{r}
+namelocator<- grep("bold;",ss)
+namelines<- ss[namelocator]
+namelines
+```
+
+Cleaning it up a bit more.  Gsubbing blanks for the html styling.
+
+```{r}
+nl<- gsub("font-family:Arial;font-size:X-Small;font-weight:bold;",
+  "",
+  namelines)
+nl
+```
+
+```{r}
+nl2<- gsub("font-size:Small;font-weight:bold;width:30%;","",nl)
+nl3<- gsub("background-color:#CCCCCC;font-weight:bold;width:150px;","",nl2)
+nl4<- gsub("style=","",nl3)
+nl5<- gsub("</span>","",nl4)
+nl5
+
+```
+
+So for Josh Edgeskin, that's EDGE , ARTHUR "SKIN" on the webpage. I did lose the addresses by focusing on the names.  

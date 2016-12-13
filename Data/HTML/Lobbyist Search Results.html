@@ -1,0 +1,456 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="ctl00_Head1"><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"41a18997af","applicationID":"2112577","transactionName":"ZVAHMkIHWRdWBRIMWlwaJDVgSVsLVQQfDEZGGgkJUgRODUQSOQJHXUAVFVUHRQdfFAMWQF5BFkhRFUcc","queueTime":0,"applicationTime":20,"agent":"","atts":""}</script><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[(new Date).getTime()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var s=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],l="api-",p=l+"ixn-";a(s,function(e,t){f[t]=o(l+t,!0,"api")}),f.addPageAction=o(l+"addPageAction",!0),f.setCurrentRouteName=o(l+"routeName",!0),t.exports=newrelic,f.interaction=function(){return(new r).get()};var d=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(p+"tracer",[Date.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return t.apply(this,arguments)}finally{c.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){d[t]=o(p+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,(new Date).getTime()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o){if(!p.aborted){e&&e(n,r,o);for(var i=t(o),a=v(n),u=a.length,c=0;c<u;c++)a[c].apply(i,r);var f=s[w[n]];return f&&f.push([y,n,r,i]),i}}function d(e,t){b[e]=v(e).concat(t)}function v(e){return b[e]||[]}function g(e){return l[e]=l[e]||o(n)}function m(e,t){f(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var b={},w={},y={on:d,emit:n,get:g,listeners:v,context:t,buffer:m,abort:a,aborted:!1};return y}function i(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},l={},p=t.exports=o();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!h++){var e=y.info=NREUM.info,t=l.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return f.abort();c(b,function(t,n){e[t]||(e[t]=n)}),u("mark",["onload",a()],null,"api");var n=l.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===l.readyState&&i()}function i(){u("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var u=e("handle"),c=e(2),f=e("ee"),s=window,l=s.document,p="addEventListener",d="attachEvent",v=s.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:v,REQ:s.Request,EV:s.Event,PR:s.Promise,MO:s.MutationObserver},e(1);var m=""+location,b={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-998.min.js"},w=v&&g&&g[p]&&!/CriOS/.test(navigator.userAgent),y=t.exports={offset:a(),origin:m,features:{},xhrWrappable:w};l[p]?(l[p]("DOMContentLoaded",i,!1),s[p]("load",r,!1)):(l[d]("onreadystatechange",o),s[d]("onload",r)),u("mark",["firstbyte",a()],null,"api");var h=0},{}]},{},["loader"]);</script><title>
+	Lobbyist Reports Search | Georgia Government Transparency and Campaign Finance Commission of Georgia of Georgia
+</title><meta name="description" content="Georgia Georgia Government Transparency and Campaign Finance Commission of Georgia. Find up-to-date information on the financing of political campaigns and lobbyist expenditures, contribution limits, and more." /><meta name="Keywords" content="ethics, campaign, finance, contributions, expenditures, advisory opinions, lobby, financial statements, government, Georgia, elections" /><meta name="rating" content="general" /><meta name="IS" content="ok_trust" /><meta name="distribution" content="global" /><meta name="copyright" content="Georgia Government Transparency and Campaign Finance Commission of Georgia of Georgia" /><meta name="alias" content="http://www.ethics.ga.gov" /><meta name="author" content="Georgia Government Transparency and Campaign Finance Commission of Georgia" /><meta name="owner" content="Content: Georgia Government Transparency and Campaign Finance Commission of Georgia" /><meta name="robots" content="all" /><meta name="revisit-after" content="15 days" />
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<link href="../theethics.css" rel="stylesheet" />
+   <script type="text/javascript">
+       _uacct = "UA-2397276-1";
+       urchinTracker();
+       function TABLE1_onclick() {
+       }
+</script>
+       <style type="text/css">
+
+#dropmenudiv{
+position:absolute;
+border:1px solid black;
+border-bottom-width: 0;
+font:normal 12px Verdana;
+line-height:18px;
+z-index:100;
+}
+
+#dropmenudiv a{
+width: 100%;
+display: block;
+text-indent: 3px;
+border-bottom: 1px solid black;
+padding: 1px 0;
+text-decoration: none;
+font-weight: bold;
+}
+
+#dropmenudiv a:hover{ /*hover background color*/
+background-color: yellow;
+}
+
+    </style>
+
+</head>
+<body>
+<form name="aspnetForm" method="post" action="Lobbyist_Groupsearchresults.aspx?Year=2006+and+Newer&amp;GroupName=Aetna&amp;GroupNameContains=" id="aspnetForm">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="D60436F0" />
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="88FmT4yh8srwW45kLF+mlbbRGHBkF/GUlFYvcu/FGvazo4350urk35PhWzUvhQXDBV6ZS7M+CZEkz3BnPw24tHH3gnaTqDvEuD+NlG2VLCDUis+zHqIPqoH5gyZjcTlVCpMckSpGlgV0WOp8Yn9CxnZUIUgCOytb+Nud4VlvfwAxyCbB5Se91N4bEa6VXWl4KrN9L6jAjQLhpqPiGKvHyH8tsO/wlQZayDJqo56c5DmbBjQ9aeGH23sd+SLa/Jc6e7zi74/loosXZOETZAOnTCxGya0=" />
+</div>
+<table border="0" cellpadding="0" cellspacing="0" align="center">
+<tr>
+<td width="700"><table border="0" cellpadding="0">
+  <tr>
+    <td class="style217">
+<a href="http://ethics.ga.gov"><img src="../images/newtop.jpg" width="992" height="153" style="border:0px;" /></a>
+    
+    </td>
+  </tr>
+ 
+</table>
+  </div></td>
+</tr>
+<tr>
+<td class="style15">
+    <table height="394" border="0" cellpadding="0" cellspacing="0" 
+        frame="above" style="width: 992px">
+<tr>
+<td width="210" class="tablestuff">
+            <br />
+            <table>
+
+        <!-- END COMMISSION MEETINGS--> 
+        <!-- SEC TRAINING-->
+
+            
+        <!-- END SEC TRAINING-->
+        <!-- Quick Links-->
+            <tr>
+                <td class="style220">&nbsp;</td>
+                <td>
+                  <table border="0" style="width: 198px">
+      <tr>
+         <td class="style218">&nbsp;</td>
+          <td class="style219">Search Lobbyist </td>
+        </tr>
+     
+        <tr>
+          <td class="style218">&nbsp;</td>
+          <td class="quicklinks"><a href="/search/Lobbyist/Lobbyist_ByName.aspx" rel="nofollow" title="Search by Name ">By Name</a></td>
+        </tr>
+     
+        <tr>
+          <td class="style218">&nbsp;</td>
+           <td class="quicklinks"><a href="/search/Lobbyist/Lobbyist_ByGroup.aspx" rel="nofollow" title="Search by Group ">By Group</a></td>
+        </tr>
+     
+        <tr>
+          <td class="style218">&nbsp;</td>
+         <td class="quicklinks"><a href="/search/Lobbyist/Lobbyist_ByExpenditures.aspx" rel="nofollow" title="Search by Expenditures ">By Expenditures</a></td>
+        </tr>
+     
+        <tr>
+          <td class="style218">&nbsp;</td>
+          <td class="quicklinks"><a href="/search/Lobbyist/Lobbyist_Menu.aspx" rel="nofollow" title="View Lobbyist Roster ">Lobbyist Roster</a></td>
+        </tr>
+          
+        <tr>
+        <td class="style218">&nbsp;</td>
+        <td class="style212">&nbsp;</td>
+        </tr>
+        <tr>
+         <td class="style218">&nbsp;</td>
+          <td class="style219">Search Other Report</td>
+        </tr>
+        
+         <tr>
+          <td class="style218">&nbsp;</td>
+          <td class="quicklinks"><a href="/search/Business/Business_Transaction_Search.aspx" rel="nofollow" title="Search Business Transaction Reports by Name ">Business Transaction Reports</a></td>
+        </tr>
+     
+        <tr>
+          <td class="style218">&nbsp;</td>
+          <td class="quicklinks"><a href="/search/Campaign/Campaign_ByName.aspx" rel="nofollow" title="Search Camapign Reports by Name ">Campaign Reports</a></td>
+        </tr>
+     
+        <tr>
+          <td class="style218">&nbsp;</td>
+          <td class="quicklinks"><a href="/search/Financial/Financial_ByName.aspx" rel="nofollow" title="Search Personal Financial Reports ">Personal Financial Reports & Affidavits</a></td>
+        </tr>
+     
+        <tr>
+          <td class="style218">&nbsp;</td>
+          <td class="quicklinks"><a href="/search/Lobbyist/Lobbyist_ByName.aspx" rel="nofollow" title="Search Lobbyist Reports ">Lobbyist Reports</a></td>
+        </tr>
+     
+        <tr>
+          <td class="style218">&nbsp;</td>
+          <td class="quicklinks"><a href="/search/Late/Late_ByName.aspx" rel="nofollow" title="Search Late/NON-Filer Reports ">Late/Non-Filer Reports</a></td>
+        </tr>
+        
+         <tr>
+          <td class="style218">&nbsp;</td>
+          <td class="quicklinks"><a href="/search/VendorGifts/VG_NameSearch.aspx" rel="nofollow" title="Search Vendor Gifts Reports">Vendor Gifts Reports</a></td>
+        </tr>
+     
+            <tr>
+          <td class="style218">&nbsp;</td>
+          <td class="quicklinks"><a href="/search/ReportSummary.aspx">CFC Main Search</a></td>
+        </tr>
+       <tr>
+        <td class="style218">&nbsp;</td>
+          <td class="style214"><center><h2 class="menuclass"><a href="http://ethics.ga.gov">CFC Home Page</a></h2></center></td>
+        </tr>
+        </table>
+                            <br />
+                </td>   
+            </tr>
+        </table>  
+        </td>  
+        <td width="782" style="background-color:white" valign="top">
+            
+   <h4 style="margin-left:145px; margin-top:75px;"><span id="ctl00_ContentPlaceHolder1_lblMessage" style="display:inline-block;width:100%;">LOBBYIST SEARCH - BY GROUP RESULTS FOR 2006 AND NEWER</span></h4> 
+    <div style="text-align:center; margin-left:30px; width:95%"><br />
+		        
+         <table style="text-align:center; width:100%; margin: 0px 0px 0px 40px">
+         <tr><td style="text-align:center; margin-left:50px; width:90%">
+           <div>
+
+</div>
+              </td>
+              </tr>
+              </table>  
+                
+              <table style="text-align:center; margin: 0 auto; width:100%">
+              <tr><td style="text-align:center; margin: 0 auto; width:90%">  
+                <div>
+	<table cellspacing="0" cellpadding="4" rules="all" border="1" id="ctl00_ContentPlaceHolder1_Results2" style="color:#333333;width:99%;border-collapse:collapse;position: static;">
+		<tr class="gridviewheader">
+			<th align="left" valign="middle" scope="col">Action</th><th align="left" valign="middle" scope="col">Group</th><th align="left" valign="middle" scope="col">Address</th><th align="left" valign="middle" scope="col">Lobbyist</th>
+		</tr><tr class="gridviewrow" style="height:55px;">
+			<td align="left" valign="middle" style="width:10%;">
+                         <a id="ctl00_ContentPlaceHolder1_Results2_ctl02_lnkView" class="lblentrylink" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$Results2$ctl02$lnkView','')" style="display:inline-block;width:10%;">View Group</a>
+                         </td><td class="highlightcolor" align="left" valign="middle" style="font-size:Small;font-weight:bold;width:30%;">AETNA</td><td align="left" valign="middle" style="width:35%;"><span class="lblentry">1100 ABERNATHY ROAD</span><span><br /></span><span class="lblentry">SUITE 375</span><span><br /></span><span class="lblentry">ATLANTA</span><span class="lblentry">,</span><span class="lblentry">GA</span><span class="lblentry"> </span><span class="lblentry">30328</span></td><td align="left" valign="middle" style="width:25%;">
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl02_lblLName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">NORTON</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl02_comma" style="font-family:Arial;font-size:X-Small;font-weight:bold;">, </span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl02_lblFName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">LAURA</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl02_lblMName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">LINDSEY</span>
+                          </td>
+		</tr><tr class="gridviewalterrow" style="height:55px;">
+			<td align="left" valign="middle" style="width:10%;">
+                         <a id="ctl00_ContentPlaceHolder1_Results2_ctl03_lnkView" class="lblentrylink" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$Results2$ctl03$lnkView','')" style="display:inline-block;width:10%;">View Group</a>
+                         </td><td class="highlightcolor" align="left" valign="middle" style="font-size:Small;font-weight:bold;width:30%;">AETNA</td><td align="left" valign="middle" style="width:35%;"><span class="lblentry">5064 FIELDS POND CAVE</span><span><br /></span><span class="lblentry">MARIETTA</span><span class="lblentry">,</span><span class="lblentry">GA</span><span class="lblentry"> </span><span class="lblentry">30068</span></td><td align="left" valign="middle" style="width:25%;">
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl03_lblLName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">SMITH</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl03_comma" style="font-family:Arial;font-size:X-Small;font-weight:bold;">, </span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl03_lblFName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">DEFORD</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl03_lblMName" style="font-family:Arial;font-size:X-Small;font-weight:bold;"></span>
+                          </td>
+		</tr><tr class="gridviewrow" style="height:55px;">
+			<td align="left" valign="middle" style="width:10%;">
+                         <a id="ctl00_ContentPlaceHolder1_Results2_ctl04_lnkView" class="lblentrylink" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$Results2$ctl04$lnkView','')" style="display:inline-block;width:10%;">View Group</a>
+                         </td><td class="highlightcolor" align="left" valign="middle" style="font-size:Small;font-weight:bold;width:30%;">AETNA INC.</td><td align="left" valign="middle" style="width:35%;"><span class="lblentry">11675 GREAT OAKS WAY</span><span><br /></span><span class="lblentry">ALPHARETTA</span><span class="lblentry">,</span><span class="lblentry">GA</span><span class="lblentry"> </span><span class="lblentry">30022</span></td><td align="left" valign="middle" style="width:25%;">
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl04_lblLName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">ALBERT</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl04_comma" style="font-family:Arial;font-size:X-Small;font-weight:bold;">, </span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl04_lblFName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">JOSHUA</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl04_lblMName" style="font-family:Arial;font-size:X-Small;font-weight:bold;"></span>
+                          </td>
+		</tr><tr class="gridviewalterrow" style="height:55px;">
+			<td align="left" valign="middle" style="width:10%;">
+                         <a id="ctl00_ContentPlaceHolder1_Results2_ctl05_lnkView" class="lblentrylink" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$Results2$ctl05$lnkView','')" style="display:inline-block;width:10%;">View Group</a>
+                         </td><td class="highlightcolor" align="left" valign="middle" style="font-size:Small;font-weight:bold;width:30%;">AETNA INC.</td><td align="left" valign="middle" style="width:35%;"><span class="lblentry">151 FARMINGTON AVENUE, MAIL STOP RC61</span><span><br /></span><span class="lblentry">HARTFORD</span><span class="lblentry">,</span><span class="lblentry">CT</span><span class="lblentry"> </span><span class="lblentry">06156</span></td><td align="left" valign="middle" style="width:25%;">
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl05_lblLName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">BOLIA</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl05_comma" style="font-family:Arial;font-size:X-Small;font-weight:bold;">, </span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl05_lblFName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">DONALD</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl05_lblMName" style="font-family:Arial;font-size:X-Small;font-weight:bold;"></span>
+                          </td>
+		</tr><tr class="gridviewrow" style="height:55px;">
+			<td align="left" valign="middle" style="width:10%;">
+                         <a id="ctl00_ContentPlaceHolder1_Results2_ctl06_lnkView" class="lblentrylink" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$Results2$ctl06$lnkView','')" style="display:inline-block;width:10%;">View Group</a>
+                         </td><td class="highlightcolor" align="left" valign="middle" style="font-size:Small;font-weight:bold;width:30%;">AETNA INC.</td><td align="left" valign="middle" style="width:35%;"><span class="lblentry">11675 GREAT OAKS WAY</span><span><br /></span><span class="lblentry">ALPHARETTA</span><span class="lblentry">,</span><span class="lblentry">GA</span><span class="lblentry"> </span><span class="lblentry">30022</span></td><td align="left" valign="middle" style="width:25%;">
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl06_lblLName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">DUCKWORTH</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl06_comma" style="font-family:Arial;font-size:X-Small;font-weight:bold;">, </span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl06_lblFName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">MARCUS</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl06_lblMName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">ELLIOT</span>
+                          </td>
+		</tr><tr class="gridviewalterrow" style="height:55px;">
+			<td align="left" valign="middle" style="width:10%;">
+                         <a id="ctl00_ContentPlaceHolder1_Results2_ctl07_lnkView" class="lblentrylink" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$Results2$ctl07$lnkView','')" style="display:inline-block;width:10%;">View Group</a>
+                         </td><td class="highlightcolor" align="left" valign="middle" style="font-size:Small;font-weight:bold;width:30%;">AETNA INC.</td><td align="left" valign="middle" style="width:35%;"><span class="lblentry">151 FARMINGTON AVENUE</span><span><br /></span><span class="lblentry">HARTFORD</span><span class="lblentry">,</span><span class="lblentry">CT</span><span class="lblentry"> </span><span class="lblentry">06156</span></td><td align="left" valign="middle" style="width:25%;">
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl07_lblLName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">HAYES</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl07_comma" style="font-family:Arial;font-size:X-Small;font-weight:bold;">, </span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl07_lblFName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">ALLAN</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl07_lblMName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">J.</span>
+                          </td>
+		</tr><tr class="gridviewrow" style="height:55px;">
+			<td align="left" valign="middle" style="width:10%;">
+                         <a id="ctl00_ContentPlaceHolder1_Results2_ctl08_lnkView" class="lblentrylink" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$Results2$ctl08$lnkView','')" style="display:inline-block;width:10%;">View Group</a>
+                         </td><td class="highlightcolor" align="left" valign="middle" style="font-size:Small;font-weight:bold;width:30%;">AETNA LIFE INSURANCE COMPANY</td><td align="left" valign="middle" style="width:35%;"><span class="lblentry">930 HARVEST DRIVE</span><span><br /></span><span class="lblentry">SUITE U32N</span><span><br /></span><span class="lblentry">BLUE BELL </span><span class="lblentry">,</span><span class="lblentry">PA</span><span class="lblentry"> </span><span class="lblentry">19422</span></td><td align="left" valign="middle" style="width:25%;">
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl08_lblLName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">BOZEMAN</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl08_comma" style="font-family:Arial;font-size:X-Small;font-weight:bold;">, </span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl08_lblFName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">JOHN</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl08_lblMName" style="font-family:Arial;font-size:X-Small;font-weight:bold;"></span>
+                          </td>
+		</tr><tr class="gridviewalterrow" style="height:55px;">
+			<td align="left" valign="middle" style="width:10%;">
+                         <a id="ctl00_ContentPlaceHolder1_Results2_ctl09_lnkView" class="lblentrylink" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$Results2$ctl09$lnkView','')" style="display:inline-block;width:10%;">View Group</a>
+                         </td><td class="highlightcolor" align="left" valign="middle" style="font-size:Small;font-weight:bold;width:30%;">AETNA LIFE INSURANCE COMPANY</td><td align="left" valign="middle" style="width:35%;"><span class="lblentry">930 HARVEST DRIVE</span><span><br /></span><span class="lblentry">SUITE U32N</span><span><br /></span><span class="lblentry">BLUE BELL </span><span class="lblentry">,</span><span class="lblentry">PA</span><span class="lblentry"> </span><span class="lblentry">19422</span></td><td align="left" valign="middle" style="width:25%;">
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl09_lblLName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">EDGE</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl09_comma" style="font-family:Arial;font-size:X-Small;font-weight:bold;">, </span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl09_lblFName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">ARTHUR</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl09_lblMName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">"SKIN"</span>
+                          </td>
+		</tr><tr class="gridviewrow" style="height:55px;">
+			<td align="left" valign="middle" style="width:10%;">
+                         <a id="ctl00_ContentPlaceHolder1_Results2_ctl10_lnkView" class="lblentrylink" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$Results2$ctl10$lnkView','')" style="display:inline-block;width:10%;">View Group</a>
+                         </td><td class="highlightcolor" align="left" valign="middle" style="font-size:Small;font-weight:bold;width:30%;">AETNA LIFE INSURANCE COMPANY</td><td align="left" valign="middle" style="width:35%;"><span class="lblentry">930 HARVEST DRIVE</span><span><br /></span><span class="lblentry">SUITE U32N</span><span><br /></span><span class="lblentry">BLUE BELL </span><span class="lblentry">,</span><span class="lblentry">PA</span><span class="lblentry"> </span><span class="lblentry">19422</span></td><td align="left" valign="middle" style="width:25%;">
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl10_lblLName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">MARTIN</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl10_comma" style="font-family:Arial;font-size:X-Small;font-weight:bold;">, </span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl10_lblFName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">JOHN</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl10_lblMName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">"TRIP"</span>
+                          </td>
+		</tr><tr class="gridviewalterrow" style="height:55px;">
+			<td align="left" valign="middle" style="width:10%;">
+                         <a id="ctl00_ContentPlaceHolder1_Results2_ctl11_lnkView" class="lblentrylink" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$Results2$ctl11$lnkView','')" style="display:inline-block;width:10%;">View Group</a>
+                         </td><td class="highlightcolor" align="left" valign="middle" style="font-size:Small;font-weight:bold;width:30%;">AETNA LIFE INSURANCE COMPANY</td><td align="left" valign="middle" style="width:35%;"><span class="lblentry">930 HARVEST DRIVE</span><span><br /></span><span class="lblentry">SUITE U32N</span><span><br /></span><span class="lblentry">BLUE BELL </span><span class="lblentry">,</span><span class="lblentry">PA</span><span class="lblentry"> </span><span class="lblentry">19422</span></td><td align="left" valign="middle" style="width:25%;">
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl11_lblLName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">PETTIT</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl11_comma" style="font-family:Arial;font-size:X-Small;font-weight:bold;">, </span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl11_lblFName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">BOYD</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl11_lblMName" style="font-family:Arial;font-size:X-Small;font-weight:bold;"></span>
+                          </td>
+		</tr><tr class="gridviewrow" style="height:55px;">
+			<td align="left" valign="middle" style="width:10%;">
+                         <a id="ctl00_ContentPlaceHolder1_Results2_ctl12_lnkView" class="lblentrylink" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$Results2$ctl12$lnkView','')" style="display:inline-block;width:10%;">View Group</a>
+                         </td><td class="highlightcolor" align="left" valign="middle" style="font-size:Small;font-weight:bold;width:30%;">AETNA, INC.</td><td align="left" valign="middle" style="width:35%;"><span class="lblentry">11675 THOUSAND OAKS WAY</span><span><br /></span><span class="lblentry">ALPHARETTA</span><span class="lblentry">,</span><span class="lblentry">GA</span><span class="lblentry"> </span><span class="lblentry">30022</span></td><td align="left" valign="middle" style="width:25%;">
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl12_lblLName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">ALEXANDER</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl12_comma" style="font-family:Arial;font-size:X-Small;font-weight:bold;">, </span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl12_lblFName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">BRAD</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl12_lblMName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">L.</span>
+                          </td>
+		</tr><tr class="gridviewalterrow" style="height:55px;">
+			<td align="left" valign="middle" style="width:10%;">
+                         <a id="ctl00_ContentPlaceHolder1_Results2_ctl13_lnkView" class="lblentrylink" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$Results2$ctl13$lnkView','')" style="display:inline-block;width:10%;">View Group</a>
+                         </td><td class="highlightcolor" align="left" valign="middle" style="font-size:Small;font-weight:bold;width:30%;">AETNA, INC.</td><td align="left" valign="middle" style="width:35%;"><span class="lblentry">11675 THOUSAND OAKS WAY</span><span><br /></span><span class="lblentry">ALPHARETTA</span><span class="lblentry">,</span><span class="lblentry">GA</span><span class="lblentry"> </span><span class="lblentry">30022</span></td><td align="left" valign="middle" style="width:25%;">
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl13_lblLName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">FORTSON</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl13_comma" style="font-family:Arial;font-size:X-Small;font-weight:bold;">, </span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl13_lblFName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">ROBERT</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl13_lblMName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">L.</span>
+                          </td>
+		</tr><tr class="gridviewrow" style="height:55px;">
+			<td align="left" valign="middle" style="width:10%;">
+                         <a id="ctl00_ContentPlaceHolder1_Results2_ctl14_lnkView" class="lblentrylink" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$Results2$ctl14$lnkView','')" style="display:inline-block;width:10%;">View Group</a>
+                         </td><td class="highlightcolor" align="left" valign="middle" style="font-size:Small;font-weight:bold;width:30%;">AETNA, INC.</td><td align="left" valign="middle" style="width:35%;"><span class="lblentry">11675 THOUSAND OAKS WAY</span><span><br /></span><span class="lblentry">ALPHARETTA</span><span class="lblentry">,</span><span class="lblentry">GA</span><span class="lblentry"> </span><span class="lblentry">30022</span></td><td align="left" valign="middle" style="width:25%;">
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl14_lblLName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">GROOME</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl14_comma" style="font-family:Arial;font-size:X-Small;font-weight:bold;">, </span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl14_lblFName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">ASHLEY</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl14_lblMName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">SHAREE</span>
+                          </td>
+		</tr><tr class="gridviewalterrow" style="height:55px;">
+			<td align="left" valign="middle" style="width:10%;">
+                         <a id="ctl00_ContentPlaceHolder1_Results2_ctl15_lnkView" class="lblentrylink" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$Results2$ctl15$lnkView','')" style="display:inline-block;width:10%;">View Group</a>
+                         </td><td class="highlightcolor" align="left" valign="middle" style="font-size:Small;font-weight:bold;width:30%;">AETNA, INC.</td><td align="left" valign="middle" style="width:35%;"><span class="lblentry">11675 THOUSAND OAKS WAY</span><span><br /></span><span class="lblentry">ALPHARETTA</span><span class="lblentry">,</span><span class="lblentry">GA</span><span class="lblentry"> </span><span class="lblentry">30022</span></td><td align="left" valign="middle" style="width:25%;">
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl15_lblLName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">HOLCOMB</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl15_comma" style="font-family:Arial;font-size:X-Small;font-weight:bold;">, </span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl15_lblFName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">MISTY </span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl15_lblMName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">HARRIS</span>
+                          </td>
+		</tr><tr class="gridviewrow" style="height:55px;">
+			<td align="left" valign="middle" style="width:10%;">
+                         <a id="ctl00_ContentPlaceHolder1_Results2_ctl16_lnkView" class="lblentrylink" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$Results2$ctl16$lnkView','')" style="display:inline-block;width:10%;">View Group</a>
+                         </td><td class="highlightcolor" align="left" valign="middle" style="font-size:Small;font-weight:bold;width:30%;">AETNA, INC.</td><td align="left" valign="middle" style="width:35%;"><span class="lblentry">11675 GREAKS OAKS WAY</span><span><br /></span><span class="lblentry">ALPHARETTA</span><span class="lblentry">,</span><span class="lblentry">GA</span><span class="lblentry"> </span><span class="lblentry">30022</span></td><td align="left" valign="middle" style="width:25%;">
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl16_lblLName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">HUMBERSTONE</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl16_comma" style="font-family:Arial;font-size:X-Small;font-weight:bold;">, </span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl16_lblFName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">SHEILA</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl16_lblMName" style="font-family:Arial;font-size:X-Small;font-weight:bold;"></span>
+                          </td>
+		</tr><tr class="gridviewalterrow" style="height:55px;">
+			<td align="left" valign="middle" style="width:10%;">
+                         <a id="ctl00_ContentPlaceHolder1_Results2_ctl17_lnkView" class="lblentrylink" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$Results2$ctl17$lnkView','')" style="display:inline-block;width:10%;">View Group</a>
+                         </td><td class="highlightcolor" align="left" valign="middle" style="font-size:Small;font-weight:bold;width:30%;">AETNA, INC.</td><td align="left" valign="middle" style="width:35%;"><span class="lblentry">11675 GREAK OAKS WAY</span><span><br /></span><span class="lblentry">ALPHARETTA</span><span class="lblentry">,</span><span class="lblentry">GA</span><span class="lblentry"> </span><span class="lblentry">30022</span></td><td align="left" valign="middle" style="width:25%;">
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl17_lblLName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">LONG</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl17_comma" style="font-family:Arial;font-size:X-Small;font-weight:bold;">, </span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl17_lblFName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">ANDREW</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl17_lblMName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">RYAN</span>
+                          </td>
+		</tr><tr class="gridviewrow" style="height:55px;">
+			<td align="left" valign="middle" style="width:10%;">
+                         <a id="ctl00_ContentPlaceHolder1_Results2_ctl18_lnkView" class="lblentrylink" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$Results2$ctl18$lnkView','')" style="display:inline-block;width:10%;">View Group</a>
+                         </td><td class="highlightcolor" align="left" valign="middle" style="font-size:Small;font-weight:bold;width:30%;">AETNA, INC.</td><td align="left" valign="middle" style="width:35%;"><span class="lblentry">11675 THOUSAND OAKS WAY</span><span><br /></span><span class="lblentry">ALPHARETTA</span><span class="lblentry">,</span><span class="lblentry">GA</span><span class="lblentry"> </span><span class="lblentry">30022</span></td><td align="left" valign="middle" style="width:25%;">
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl18_lblLName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">LOOBY</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl18_comma" style="font-family:Arial;font-size:X-Small;font-weight:bold;">, </span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl18_lblFName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">BRIAN</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl18_lblMName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">W.</span>
+                          </td>
+		</tr><tr class="gridviewalterrow" style="height:55px;">
+			<td align="left" valign="middle" style="width:10%;">
+                         <a id="ctl00_ContentPlaceHolder1_Results2_ctl19_lnkView" class="lblentrylink" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$Results2$ctl19$lnkView','')" style="display:inline-block;width:10%;">View Group</a>
+                         </td><td class="highlightcolor" align="left" valign="middle" style="font-size:Small;font-weight:bold;width:30%;">AETNA, INC.</td><td align="left" valign="middle" style="width:35%;"><span class="lblentry">11675 THOUSAND OAKS WAY</span><span><br /></span><span class="lblentry">ALPHARETTA</span><span class="lblentry">,</span><span class="lblentry">GA</span><span class="lblentry"> </span><span class="lblentry">30022</span></td><td align="left" valign="middle" style="width:25%;">
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl19_lblLName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">PENNINGTON</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl19_comma" style="font-family:Arial;font-size:X-Small;font-weight:bold;">, </span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl19_lblFName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">RUSSELL</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl19_lblMName" style="font-family:Arial;font-size:X-Small;font-weight:bold;"></span>
+                          </td>
+		</tr><tr class="gridviewrow" style="height:55px;">
+			<td align="left" valign="middle" style="width:10%;">
+                         <a id="ctl00_ContentPlaceHolder1_Results2_ctl20_lnkView" class="lblentrylink" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$Results2$ctl20$lnkView','')" style="display:inline-block;width:10%;">View Group</a>
+                         </td><td class="highlightcolor" align="left" valign="middle" style="font-size:Small;font-weight:bold;width:30%;">AETNA, INC.</td><td align="left" valign="middle" style="width:35%;"><span class="lblentry">11675 GREAK OAKS WAY</span><span><br /></span><span class="lblentry">ALPHARETTA</span><span class="lblentry">,</span><span class="lblentry">GA</span><span class="lblentry"> </span><span class="lblentry">30022</span></td><td align="left" valign="middle" style="width:25%;">
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl20_lblLName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">ROBINSON</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl20_comma" style="font-family:Arial;font-size:X-Small;font-weight:bold;">, </span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl20_lblFName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">PETE</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl20_lblMName" style="font-family:Arial;font-size:X-Small;font-weight:bold;"></span>
+                          </td>
+		</tr><tr class="gridviewalterrow" style="height:55px;">
+			<td align="left" valign="middle" style="width:10%;">
+                         <a id="ctl00_ContentPlaceHolder1_Results2_ctl21_lnkView" class="lblentrylink" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$Results2$ctl21$lnkView','')" style="display:inline-block;width:10%;">View Group</a>
+                         </td><td class="highlightcolor" align="left" valign="middle" style="font-size:Small;font-weight:bold;width:30%;">AETNA, INC.</td><td align="left" valign="middle" style="width:35%;"><span class="lblentry">151 FARMINTON AVE</span><span><br /></span><span class="lblentry">HARTFORD</span><span class="lblentry">,</span><span class="lblentry">CT</span><span class="lblentry"> </span><span class="lblentry">06156</span></td><td align="left" valign="middle" style="width:25%;">
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl21_lblLName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">TINER</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl21_comma" style="font-family:Arial;font-size:X-Small;font-weight:bold;">, </span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl21_lblFName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">BROOKE</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl21_lblMName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">FLAHERTY</span>
+                          </td>
+		</tr><tr class="gridviewrow" style="height:55px;">
+			<td align="left" valign="middle" style="width:10%;">
+                         <a id="ctl00_ContentPlaceHolder1_Results2_ctl22_lnkView" class="lblentrylink" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$Results2$ctl22$lnkView','')" style="display:inline-block;width:10%;">View Group</a>
+                         </td><td class="highlightcolor" align="left" valign="middle" style="font-size:Small;font-weight:bold;width:30%;">AETNA, INC.</td><td align="left" valign="middle" style="width:35%;"><span class="lblentry">11675 THOUSAND OAKS WY</span><span><br /></span><span class="lblentry">ALPHARETTA</span><span class="lblentry">,</span><span class="lblentry">GA</span><span class="lblentry"> </span><span class="lblentry">30022</span></td><td align="left" valign="middle" style="width:25%;">
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl22_lblLName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">TURNER</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl22_comma" style="font-family:Arial;font-size:X-Small;font-weight:bold;">, </span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl22_lblFName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">JUDSON</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl22_lblMName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">H.</span>
+                          </td>
+		</tr><tr class="gridviewalterrow" style="height:55px;">
+			<td align="left" valign="middle" style="width:10%;">
+                         <a id="ctl00_ContentPlaceHolder1_Results2_ctl23_lnkView" class="lblentrylink" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$Results2$ctl23$lnkView','')" style="display:inline-block;width:10%;">View Group</a>
+                         </td><td class="highlightcolor" align="left" valign="middle" style="font-size:Small;font-weight:bold;width:30%;">AETNA, INC.</td><td align="left" valign="middle" style="width:35%;"><span class="lblentry">11675 GREAK OAKS WAY</span><span><br /></span><span class="lblentry">ALPHARETTA</span><span class="lblentry">,</span><span class="lblentry">GA</span><span class="lblentry"> </span><span class="lblentry">30022</span></td><td align="left" valign="middle" style="width:25%;">
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl23_lblLName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">WILLIS</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl23_comma" style="font-family:Arial;font-size:X-Small;font-weight:bold;">, </span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl23_lblFName" style="font-family:Arial;font-size:X-Small;font-weight:bold;">ROBB</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results2_ctl23_lblMName" style="font-family:Arial;font-size:X-Small;font-weight:bold;"></span>
+                          </td>
+		</tr>
+	</table>
+</div>
+                </td></tr></table>
+                
+                <br />
+                <table style="text-align:center; margin: 0 auto; width:100%">
+                    <tr> 
+                        <td style="text-align:center; width:100%">
+                            <input type="submit" name="ctl00$ContentPlaceHolder1$btnSearch" value="New Search" id="ctl00_ContentPlaceHolder1_btnSearch" class="submit" style="background-color:#CCCCCC;font-weight:bold;width:150px;" /></td>        
+                    </tr>
+                 </table><br />
+
+    </div>
+
+        </td> 
+    </tr>
+    <!-- FOOTER -->
+    </table>
+<!-- END FOOTER -->  
+<!-- FOOTER LINKS -->  
+</form>
+<!-- FOOTER LINKS --> 
+</body>
+<script type="text/javascript">
+     _uacct="UA-2397276-1";
+     urchinTracker();
+function TABLE1_onclick() {
+}
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-37326765-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<script type='text/javascript'>
+window.__lo_site_id = 51939;
+
+               (function() {
+                              var wa = document.createElement('script'); wa.type = 'text/javascript'; wa.async = true;
+                              wa.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://cdn') + '.luckyorange.com/w.js';
+                              var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wa, s);
+                 })();
+               </script>
+
+</html>

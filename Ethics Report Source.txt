@@ -1,0 +1,13 @@
+Ethics Report Source
+
+http://media.ethics.ga.gov/search/Lobbyist/Lobbyist_Menu.aspx
+
+Here's an example of a completed search query:
+http://media.ethics.ga.gov/search/Financial/Financial_BYNameResults.aspx?LastName=&FirstName=&City=Atlanta&FilerID=&OfficeStatus=0&OfficeName=&District=&Post=&Circuit=&Division=&Type=Name
+
+An individual filer page
+http://media.ethics.ga.gov/search/Financial/Financial_Details.aspx?FilerID=F2013014187
+
+
+Breaking down campaign reports for an individual corporation
+http://media.ethics.ga.gov/search/Campaign/Campaign_Name.aspx?NameID=18810&FilerID=NC2013000020&Type=committee
