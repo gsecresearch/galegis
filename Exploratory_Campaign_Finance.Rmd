@@ -1,0 +1,29 @@
+---
+title: "Exploratory_2"
+output: html_notebook
+---
+PERSONAL FINANCE DISCLOSURE SEARCH
+=========================
+[Click here](http://media.ethics.ga.gov/search/Campaign/Campaign_Local_pfds.aspx).  
+```{r}
+plot(cars)
+```
+
+ 
+JUICY:  Local campaign contribution and disclosure reports.
+[By office](http://media.ethics.ga.gov/search/Campaign/Campaign_ByOffice.aspx)
+
+Oh, nice, and they already come in csv.  
+
+```{r}
+source("C:/rhandler/sfunctions.R")
+fm<- Phaser("C:/git/galegis/Data/Individual/Fran_Millar_Campaign_Contrib.csv")
+str(fm)
+```
+
+Wow, this is really nicely formatted!
+
+For future automated processing, here's the element that yielded the csv file:
+<input type="image" name="ctl00$ContentPlaceHolder1$Export" id="ctl00_ContentPlaceHolder1_Export" src="../images/btnexcel.gif" style="border-width:0px;">
+
+

@@ -1,0 +1,150 @@
+---
+title: "Query Builder for Legis/Ethics.gov"
+output: html_notebook
+---
+
+
+```{r}
+source("C:/rhandler/sfunctions.R")
+source("C:/git/galegis/Functions/ConstructFinancialQuery.R")
+
+```
+
+SBTS
+===============
+Create a handler for the [State Business Transaction Search](http://media.ethics.ga.gov/search/Business/Business_Transaction_Search.aspx).  Generating a sample query:
+
+```{r}
+sbts_samplequery<- "http://media.ethics.ga.gov/search/Business/Business_Search_Results.aspx?LastName=&FirstName=&City=Atlanta&FilerID="
+
+#Here's the result of clicking on view details next to name
+sbts_viewdetails<- "http://media.ethics.ga.gov/search/Business/Business_Transaction_Filer_Info.aspx?FilerID=B2012000078"
+
+```
+
+
+Lobbyist Search
+=================
+
+```{r}
+lob_squery<- "http://media.ethics.ga.gov/Search/Lobbyist/Lobbyist_results.aspx?&Year=2014&LastName=&FirstName=&City=Atlanta&FilerID="
+  #This is no name specified, just City = Atlanta.  It produces a fairly long table.  
+```
+
+Checking structure of the lobbyist table:
+```{r}
+lob_html<- readHTMLTable(lob_squery)
+str(lob_html)
+```
+
+element 7 :  ctl00_ContentPlaceHolder1_Results
+
+Looks like only two variables are needed:
+
+```{r}
+CLQuery<- 
+  function(lastname=NULL, firstname=NULL, city=NULL,year=2016) { library(XML)
+  full_url<- paste("http://media.ethics.ga.gov/Search/Lobbyist/Lobbyist_results.aspx?&Year=",year,"&LastName=",lastname,"&FirstName=",firstname,"&City=",city,"&FilerID=",sep="")
+   html_result<- readHTMLTable(full_url)
+extractLobbyist<- html_result$ctl00_ContentPlaceHolder1_Results$Lobbyist
+extractAddress<- html_result$ctl00_ContentPlaceHolder1_Results$Address
+
+rettt<- data.frame(Lobbyist_Name=extractLobbyist,Lobbyist_Address=extractAddress)
+lll<- list(Lobbyist_Info=rettt,Query=full_url,Full_HTML=html_result)
+lll
+   }
+
+```
+
+Function completed.  Testing...
+**NOTE**:  Check out a [lobbyist page](http://media.ethics.ga.gov/Search/Lobbyist/Lobbyist_Name.aspx?&FilerID=L20050340): pretty sweet information about the network of associations.
+
+```{r}
+#Attempting a search w last name edwards year 2014
+attexec<- CLQuery(lastname="Edwards",year="2014")
+str(attexec)
+```
+
+Either there's just one dude named Edwards or I screwed up my query!
+Hah!  Nope, there is just one!
+
+**FUNCTION CONFIRMED**:  Added to Functions/ConstructLobbyistQuery.R
+
+NEXT STEPS:
+==================
+Can we go deeper on the lobbyist result page to get more detailed information on each individual lobbyist?  Here's the javascript for View Lobbyist
+```{r}
+View_Lobbyist <- "javascript:__doPostBack('ctl00$ContentPlaceHolder1$Results$ctl02$lnkView','')"
+Lobbyist_RDreport <- "http://media.ethics.ga.gov/Search/Lobbyist/Lobbyist_Name.aspx?&FilerID=L20050297"
+
+```
+When clicked, View Lobbyist brings up the page based solely on the lobbyist's FilerID.  So, if we have that, we can go straight to the page with  their group membership information.  Once there, click view group.  **NOTE**:  The group name should be listed under the lobbyist page, therefore there may be little reason to click through to the group report.  
+
+```{r}
+View_Group <- "javascript:__doPostBack('ctl00$ContentPlaceHolder1$GroupInfo$ctl02$lnkView','')"
+```
+**NOTES ON ABOVE SYNTAX**:  ctl01,02,03 all the way down the page is what that means.  So we could easily predictr those values based on parameters of the page.  
+
+**ON HOW TO POST**:  With [httr](https://cran.r-project.org/web/packages/httr/vignettes/quickstart.html).  
+
+
+
+The Javascript above looks like it's referencing the same exact parts of the file I was just pulling apart from the HTML.  Here's the [CRAN PAGE](https://cran.r-project.org/web/packages/js/vignettes/intro.html) on working with Javascript in R.  
+
+From this [stack posting](http://stackoverflow.com/questions/3426508/finding-the-web-address-of-a-javascript-link) that function is what's called a POST request which I think means filling out a form.  The form is apparently an "aspnetForm" field. 
+
+Possibilities:
+**Line 45:**  "<form name="aspnetForm" method="post" action="Lobbyist_Groupsearchresults.aspx?Year=2006+and+Newer&amp;GroupName=&amp;GroupNameContains=gas" id="aspnetForm">")
+
+I'm going to see if I can find it in the full html
+
+```{r}
+htcatch<- attexec$Full_HTML
+str(htcatch)
+#vg<- grep("View Group",htcatch)
+
+```
+
+A link on [dopostback](http://aspalliance.com/895_Understanding_the_JavaScript___doPostBack_Function).  Ok apparently we're looking in the HTML for the "__EVENTTARGET" field.  As suspected it's under the aspnet form thing.  Checking the Rcurl/httr docs to see if there's a clear explanation for this.
+
+Here's the code:
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE"
+
+PICK UP HERE.  
+=============
+Need to learn how to format JSON requests to pull up the lobbyist's group pages.  [Here's](http://media.ethics.ga.gov/search/Lobbyist/Lobbyist_ByGroup.aspx) a link to the lobbyist group search.  Pulling information:
+
+Direct link to a lobbyist's group registration info:
+```{r}
+lgri<- "http://media.ethics.ga.gov/search/Lobbyist/Lobbyist_Group.aspx?&FilerID=L20070067&LGID=5727&Year=2006%20and%20Newer&Type=LG"
+```
+I wonder if you need a filer ID or if you can get away with just a group ID?  It seems like you do need it .  Maybe instead of deleting the parameter I'll just leave it blank.
+
+Nevermind!  [Here's a link to the lobbyist group roster by year](http://media.ethics.ga.gov/search/Lobbyist/Lobbyist_Menu.aspx)  
+
+[Lobbyist Group by Expenditures](http://media.ethics.ga.gov/search/Lobbyist/Lobbyist_ByExpenditures.aspx).  This form is a bit more interesting than the others.  It has several interesting fields.  
+
+Lobbyist Groups for 2016
+===========================
+```{r}
+hhh<- Phaser("C:/git/galegis/Data/Lobbyist_Group/LGR_2016.csv")
+str(hhh)
+```
+
+Ahhhh, this roster is good for the FilerIDs which we can feed back into some of the more detailed queries we might want to look at.  
+
+Number of unique associations:
+```{r}
+length(unique(hhh$Association))
+```
+
+1896 cases.  Sampling...
+```{r}
+sample(hhh$Association,200)
+```
+
+Hey, it's the Koch brothers!  
+
+**Next steps for these data**:  It will be great to plug in the lobbying groups and see who they connect to.  
