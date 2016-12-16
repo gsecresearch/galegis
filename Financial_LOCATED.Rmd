@@ -1,0 +1,52 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+
+
+```{r}
+
+lf<- list.files()
+df<- list.files("./Data")
+pacs<- Phaser("./Data/PAClist_csv.csv")
+str(pacs)
+```
+```{r}
+pacs$CommitteeName
+```
+
+next steps:  Make a PAC Query builder.
+1)  Locate query page:  [DONE.](http://media.ethics.ga.gov/search/Campaign/Campaign_ByName.aspx)
+2)  Pull in query format.  [DONE.](http://media.ethics.ga.gov/search/Campaign/Campaign_Namesearchresults_NC.aspx?CommitteeType=1&CommitteeName=Wal)  This is for PACS, searching with name WAL
+```{r}
+pacs[602,]
+```
+
+Aha!  [Here's](http://media.ethics.ga.gov/search/Campaign/Campaign_Name.aspx?NameID=5541&FilerID=NC2008000109&Type=committee) a query where you can include the filer ID.  
+
+**BEST $ AMOUNT PAGE SO FAR**:  [This page](http://media.ethics.ga.gov/search/Campaign/CCDR_Report_Summary.aspx?NameID=18634&FilerID=C2013000219&CDRID=109719&Name=Blackwell,%20Keith%20&Year=2014&Report=March%2031st%20-%20Election%20Year) returns HTML table with good financial data.  Importantly it looks like with the correct information headers could be generated from information held in other databases such as PAC database and candidate databases.  
+
+While the previous page was summary information, [this page](http://media.ethics.ga.gov/search/Campaign/Campaign_ByContributions_RFR.aspx?NameID=18634&FilerID=C2013000219&CDRID=109719&Name=Blackwell,%20Keith%20&Year=2014&Report=March%2031st%20-%20Election%20Year) actually lists the specific donors and amounts.  
+**SPECIFIC HEADER INFORMATION**:  For the Report= tag, that information can be combed from [this page](http://media.ethics.ga.gov/search/Campaign/Campaign_Name.aspx?NameID=18634&FilerID=C2013000219&Type=candidate).  
+**HEADER NameID**:  Not sure how to pull this directly from a page HTML since it seems to open a page only when the doPostBack JS is queried.  
+
+Learning more about JS 
+===========
+Events:  [basics](http://www.w3schools.com/js/js_events.asp).  
+Clicking a JS in python:  [stack](http://stackoverflow.com/questions/13436418/simulating-clicking-on-a-javascript-link-in-python#13436536).  NOTE This requires selenium package which integrates with the web browser.  This requires drivers, for chrome, whichc are located [here](https://sites.google.com/a/chromium.org/chromedriver/downloads).  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
