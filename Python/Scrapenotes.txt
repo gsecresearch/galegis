@@ -1,0 +1,4 @@
+Python Scrapenotes
+
+Have to pull down the html file before it can be read into BS
+	libxml ROYAL PITA on windows - so pull to r and feed to BS in python instead

@@ -1,0 +1,372 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="ctl00_Head1"><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"41a18997af","applicationID":"2112577","transactionName":"ZVAHMkIHWRdWBRIMWlwaJDVgSVsLVQQfDEZGGgkJUgRODUQSORdQQUAJEkNIVhdHHg==","queueTime":0,"applicationTime":13,"agent":"","atts":""}</script><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[(new Date).getTime()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var s=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],l="api-",p=l+"ixn-";a(s,function(e,t){f[t]=o(l+t,!0,"api")}),f.addPageAction=o(l+"addPageAction",!0),f.setCurrentRouteName=o(l+"routeName",!0),t.exports=newrelic,f.interaction=function(){return(new r).get()};var d=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(p+"tracer",[Date.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return t.apply(this,arguments)}finally{c.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){d[t]=o(p+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,(new Date).getTime()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o){if(!p.aborted){e&&e(n,r,o);for(var i=t(o),a=v(n),u=a.length,c=0;c<u;c++)a[c].apply(i,r);var f=s[w[n]];return f&&f.push([y,n,r,i]),i}}function d(e,t){b[e]=v(e).concat(t)}function v(e){return b[e]||[]}function g(e){return l[e]=l[e]||o(n)}function m(e,t){f(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var b={},w={},y={on:d,emit:n,get:g,listeners:v,context:t,buffer:m,abort:a,aborted:!1};return y}function i(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},l={},p=t.exports=o();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!h++){var e=y.info=NREUM.info,t=l.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return f.abort();c(b,function(t,n){e[t]||(e[t]=n)}),u("mark",["onload",a()],null,"api");var n=l.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===l.readyState&&i()}function i(){u("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var u=e("handle"),c=e(2),f=e("ee"),s=window,l=s.document,p="addEventListener",d="attachEvent",v=s.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:v,REQ:s.Request,EV:s.Event,PR:s.Promise,MO:s.MutationObserver},e(1);var m=""+location,b={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-998.min.js"},w=v&&g&&g[p]&&!/CriOS/.test(navigator.userAgent),y=t.exports={offset:a(),origin:m,features:{},xhrWrappable:w};l[p]?(l[p]("DOMContentLoaded",i,!1),s[p]("load",r,!1)):(l[d]("onreadystatechange",o),s[d]("onload",r)),u("mark",["firstbyte",a()],null,"api");var h=0},{}]},{},["loader"]);</script><title>
+	Lobbyist Reports Search | Georgia Government Transparency and Campaign Finance Commission of Georgia of Georgia
+</title><meta name="description" content="Georgia Georgia Government Transparency and Campaign Finance Commission of Georgia. Find up-to-date information on the financing of political campaigns and lobbyist expenditures, contribution limits, and more." /><meta name="Keywords" content="ethics, campaign, finance, contributions, expenditures, advisory opinions, lobby, financial statements, government, Georgia, elections" /><meta name="rating" content="general" /><meta name="IS" content="ok_trust" /><meta name="distribution" content="global" /><meta name="copyright" content="Georgia Government Transparency and Campaign Finance Commission of Georgia of Georgia" /><meta name="alias" content="http://www.ethics.ga.gov" /><meta name="author" content="Georgia Government Transparency and Campaign Finance Commission of Georgia" /><meta name="owner" content="Content: Georgia Government Transparency and Campaign Finance Commission of Georgia" /><meta name="robots" content="all" /><meta name="revisit-after" content="15 days" />
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<link href="../theethics.css" rel="stylesheet" />
+   <script type="text/javascript">
+       _uacct = "UA-2397276-1";
+       urchinTracker();
+       function TABLE1_onclick() {
+       }
+</script>
+       <style type="text/css">
+
+#dropmenudiv{
+position:absolute;
+border:1px solid black;
+border-bottom-width: 0;
+font:normal 12px Verdana;
+line-height:18px;
+z-index:100;
+}
+
+#dropmenudiv a{
+width: 100%;
+display: block;
+text-indent: 3px;
+border-bottom: 1px solid black;
+padding: 1px 0;
+text-decoration: none;
+font-weight: bold;
+}
+
+#dropmenudiv a:hover{ /*hover background color*/
+background-color: yellow;
+}
+
+    </style>
+
+</head>
+<body>
+<form name="aspnetForm" method="post" action="Lobbyist_results.aspx?Year=2016&amp;LastName=thom&amp;FirstName=&amp;City=&amp;FilerID=" id="aspnetForm">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="D5922856" />
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="kaGibBzPOmJoYBLCZi0Osc3nEmzDgdSAZJNydn+bpnKUHa+dsx3S53PrKomCr/G4ACw3XxJvy4o14i+FCcViH21BD38Dil96ck6j3KffXuoaUrVF11FzyI9fsS08YyQxgn8voLGDdqPPcrE9cGAMr9roxxHBqURU0K+ETCwxGuOyvkZ+" />
+</div>
+<table border="0" cellpadding="0" cellspacing="0" align="center">
+<tr>
+<td width="700"><table border="0" cellpadding="0">
+  <tr>
+    <td class="style217">
+<a href="http://ethics.ga.gov"><img src="../images/newtop.jpg" width="992" height="153" style="border:0px;" /></a>
+    
+    </td>
+  </tr>
+ 
+</table>
+  </div></td>
+</tr>
+<tr>
+<td class="style15">
+    <table height="394" border="0" cellpadding="0" cellspacing="0" 
+        frame="above" style="width: 992px">
+<tr>
+<td width="210" class="tablestuff">
+            <br />
+            <table>
+
+        <!-- END COMMISSION MEETINGS--> 
+        <!-- SEC TRAINING-->
+
+            
+        <!-- END SEC TRAINING-->
+        <!-- Quick Links-->
+            <tr>
+                <td class="style220">&nbsp;</td>
+                <td>
+                  <table border="0" style="width: 198px">
+      <tr>
+         <td class="style218">&nbsp;</td>
+          <td class="style219">Search Lobbyist </td>
+        </tr>
+     
+        <tr>
+          <td class="style218">&nbsp;</td>
+          <td class="quicklinks"><a href="/search/Lobbyist/Lobbyist_ByName.aspx" rel="nofollow" title="Search by Name ">By Name</a></td>
+        </tr>
+     
+        <tr>
+          <td class="style218">&nbsp;</td>
+           <td class="quicklinks"><a href="/search/Lobbyist/Lobbyist_ByGroup.aspx" rel="nofollow" title="Search by Group ">By Group</a></td>
+        </tr>
+     
+        <tr>
+          <td class="style218">&nbsp;</td>
+         <td class="quicklinks"><a href="/search/Lobbyist/Lobbyist_ByExpenditures.aspx" rel="nofollow" title="Search by Expenditures ">By Expenditures</a></td>
+        </tr>
+     
+        <tr>
+          <td class="style218">&nbsp;</td>
+          <td class="quicklinks"><a href="/search/Lobbyist/Lobbyist_Menu.aspx" rel="nofollow" title="View Lobbyist Roster ">Lobbyist Roster</a></td>
+        </tr>
+          
+        <tr>
+        <td class="style218">&nbsp;</td>
+        <td class="style212">&nbsp;</td>
+        </tr>
+        <tr>
+         <td class="style218">&nbsp;</td>
+          <td class="style219">Search Other Report</td>
+        </tr>
+        
+         <tr>
+          <td class="style218">&nbsp;</td>
+          <td class="quicklinks"><a href="/search/Business/Business_Transaction_Search.aspx" rel="nofollow" title="Search Business Transaction Reports by Name ">Business Transaction Reports</a></td>
+        </tr>
+     
+        <tr>
+          <td class="style218">&nbsp;</td>
+          <td class="quicklinks"><a href="/search/Campaign/Campaign_ByName.aspx" rel="nofollow" title="Search Camapign Reports by Name ">Campaign Reports</a></td>
+        </tr>
+     
+        <tr>
+          <td class="style218">&nbsp;</td>
+          <td class="quicklinks"><a href="/search/Financial/Financial_ByName.aspx" rel="nofollow" title="Search Personal Financial Reports ">Personal Financial Reports & Affidavits</a></td>
+        </tr>
+     
+        <tr>
+          <td class="style218">&nbsp;</td>
+          <td class="quicklinks"><a href="/search/Lobbyist/Lobbyist_ByName.aspx" rel="nofollow" title="Search Lobbyist Reports ">Lobbyist Reports</a></td>
+        </tr>
+     
+        <tr>
+          <td class="style218">&nbsp;</td>
+          <td class="quicklinks"><a href="/search/Late/Late_ByName.aspx" rel="nofollow" title="Search Late/NON-Filer Reports ">Late/Non-Filer Reports</a></td>
+        </tr>
+        
+         <tr>
+          <td class="style218">&nbsp;</td>
+          <td class="quicklinks"><a href="/search/VendorGifts/VG_NameSearch.aspx" rel="nofollow" title="Search Vendor Gifts Reports">Vendor Gifts Reports</a></td>
+        </tr>
+     
+            <tr>
+          <td class="style218">&nbsp;</td>
+          <td class="quicklinks"><a href="/search/ReportSummary.aspx">CFC Main Search</a></td>
+        </tr>
+       <tr>
+        <td class="style218">&nbsp;</td>
+          <td class="style214"><center><h2 class="menuclass"><a href="http://ethics.ga.gov">CFC Home Page</a></h2></center></td>
+        </tr>
+        </table>
+                            <br />
+                </td>   
+            </tr>
+        </table>  
+        </td>  
+        <td width="782" style="background-color:white" valign="top">
+            
+    <div style="text-align:center; margin:0 auto; width:700px; padding: 0 20px 30px 20px ">
+       <h3 align="center" style=" padding: 30px 0 0 0; clear:both; letter-spacing: .2em; "><span id="ctl00_ContentPlaceHolder1_lblMessage" style="display:inline-block;width:100%;">LOBBYIST SEARCH - BY NAME RESULTS FOR 2016</span></h3>
+       <hr />
+            <table style="text-align:center; margin-left:25px; width:100%">
+            <tr><td style="text-align:center; width:90%; margin:0 auto">
+           <div>
+	<table cellspacing="0" cellpadding="4" rules="all" border="1" id="ctl00_ContentPlaceHolder1_Results" style="width:700px;border-collapse:collapse;position: static;">
+		<tr class="gridviewheader">
+			<th align="left" valign="middle" scope="col">Action</th><th align="left" valign="middle" scope="col">Lobbyist</th><th align="left" valign="middle" scope="col">Address</th>
+		</tr><tr class="gridviewrow" style="height:55px;">
+			<td align="left" valign="middle" style="width:10%;">
+                         <a id="ctl00_ContentPlaceHolder1_Results_ctl02_lnkView" class="lblentrylink" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$Results$ctl02$lnkView','')" style="display:inline-block;width:10%;">View Lobbyist</a>
+                         </td><td class="highlightcolor" align="left" valign="middle" style="width:30%;">
+                            <span id="ctl00_ContentPlaceHolder1_Results_ctl02_lblLName" class="lblentry">THOMAS</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results_ctl02_comma" class="lblentry" style="font-size:Small;">, </span>
+                            <span id="ctl00_ContentPlaceHolder1_Results_ctl02_lblFName" class="lblentry">EILEEN</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results_ctl02_lblMName" class="lblentry">LOUISE</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results_ctl02_lblSuffix" class="lblentry"></span>
+                          </td><td align="left" valign="middle" style="width:50%;">
+                            <div id="ctl00_ContentPlaceHolder1_Results_ctl02_test1"></div>
+                         <span class="lblentry">201 PRYOR ST. S.W. </span><span><br /></span><span class="lblentry">ATLANTA</span><span class="lblentry">,</span><span class="lblentry">GA</span><span class="lblentry"> </span><span class="lblentry">30303</span></td>
+		</tr><tr class="gridviewalterrow" style="height:55px;">
+			<td align="left" valign="middle" style="width:10%;">
+                         <a id="ctl00_ContentPlaceHolder1_Results_ctl03_lnkView" class="lblentrylink" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$Results$ctl03$lnkView','')" style="display:inline-block;width:10%;">View Lobbyist</a>
+                         </td><td class="highlightcolor" align="left" valign="middle" style="width:30%;">
+                            <span id="ctl00_ContentPlaceHolder1_Results_ctl03_lblLName" class="lblentry">THOMAS</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results_ctl03_comma" class="lblentry" style="font-size:Small;">, </span>
+                            <span id="ctl00_ContentPlaceHolder1_Results_ctl03_lblFName" class="lblentry">GRANT</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results_ctl03_lblMName" class="lblentry">REED</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results_ctl03_lblSuffix" class="lblentry"></span>
+                          </td><td align="left" valign="middle" style="width:50%;">
+                            <div id="ctl00_ContentPlaceHolder1_Results_ctl03_test1"></div>
+                         <span class="lblentry">1699 TULLIE CIRCLE</span><span><br /></span><span class="lblentry">ATLANTA</span><span class="lblentry">,</span><span class="lblentry">GA</span><span class="lblentry"> </span><span class="lblentry">30329</span></td>
+		</tr><tr class="gridviewrow" style="height:55px;">
+			<td align="left" valign="middle" style="width:10%;">
+                         <a id="ctl00_ContentPlaceHolder1_Results_ctl04_lnkView" class="lblentrylink" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$Results$ctl04$lnkView','')" style="display:inline-block;width:10%;">View Lobbyist</a>
+                         </td><td class="highlightcolor" align="left" valign="middle" style="width:30%;">
+                            <span id="ctl00_ContentPlaceHolder1_Results_ctl04_lblLName" class="lblentry">THOMAS</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results_ctl04_comma" class="lblentry" style="font-size:Small;">, </span>
+                            <span id="ctl00_ContentPlaceHolder1_Results_ctl04_lblFName" class="lblentry">JARED</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results_ctl04_lblMName" class="lblentry">SAMUEL</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results_ctl04_lblSuffix" class="lblentry"></span>
+                          </td><td align="left" valign="middle" style="width:50%;">
+                            <div id="ctl00_ContentPlaceHolder1_Results_ctl04_test1"></div>
+                         <span class="lblentry">2976 NORTHSIDE DRIVE</span><span><br /></span><span class="lblentry">ATLANTA</span><span class="lblentry">,</span><span class="lblentry">GA</span><span class="lblentry"> </span><span class="lblentry">30305</span></td>
+		</tr><tr class="gridviewalterrow" style="height:55px;">
+			<td align="left" valign="middle" style="width:10%;">
+                         <a id="ctl00_ContentPlaceHolder1_Results_ctl05_lnkView" class="lblentrylink" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$Results$ctl05$lnkView','')" style="display:inline-block;width:10%;">View Lobbyist</a>
+                         </td><td class="highlightcolor" align="left" valign="middle" style="width:30%;">
+                            <span id="ctl00_ContentPlaceHolder1_Results_ctl05_lblLName" class="lblentry">THOMAS</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results_ctl05_comma" class="lblentry" style="font-size:Small;">, </span>
+                            <span id="ctl00_ContentPlaceHolder1_Results_ctl05_lblFName" class="lblentry">JENNIFER</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results_ctl05_lblMName" class="lblentry">CHRISTINA</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results_ctl05_lblSuffix" class="lblentry"></span>
+                          </td><td align="left" valign="middle" style="width:50%;">
+                            <div id="ctl00_ContentPlaceHolder1_Results_ctl05_test1"></div>
+                         <span class="lblentry">244 WASHINGTON ST </span><span><br /></span><span class="lblentry">SUITE 300</span><span><br /></span><span class="lblentry">ATLANTA </span><span class="lblentry">,</span><span class="lblentry">GA</span><span class="lblentry"> </span><span class="lblentry">30334</span></td>
+		</tr><tr class="gridviewrow" style="height:55px;">
+			<td align="left" valign="middle" style="width:10%;">
+                         <a id="ctl00_ContentPlaceHolder1_Results_ctl06_lnkView" class="lblentrylink" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$Results$ctl06$lnkView','')" style="display:inline-block;width:10%;">View Lobbyist</a>
+                         </td><td class="highlightcolor" align="left" valign="middle" style="width:30%;">
+                            <span id="ctl00_ContentPlaceHolder1_Results_ctl06_lblLName" class="lblentry">THOMAS</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results_ctl06_comma" class="lblentry" style="font-size:Small;">, </span>
+                            <span id="ctl00_ContentPlaceHolder1_Results_ctl06_lblFName" class="lblentry">LINDSAY</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results_ctl06_lblMName" class="lblentry"></span>
+                            <span id="ctl00_ContentPlaceHolder1_Results_ctl06_lblSuffix" class="lblentry"></span>
+                          </td><td align="left" valign="middle" style="width:50%;">
+                            <div id="ctl00_ContentPlaceHolder1_Results_ctl06_test1"></div>
+                         <span class="lblentry">GRACE ACRES FARM</span><span><br /></span><span class="lblentry">12854 WAYCROSS HWY</span><span><br /></span><span class="lblentry">SCREVEN</span><span class="lblentry">,</span><span class="lblentry">GA</span><span class="lblentry"> </span><span class="lblentry">31560</span></td>
+		</tr><tr class="gridviewalterrow" style="height:55px;">
+			<td align="left" valign="middle" style="width:10%;">
+                         <a id="ctl00_ContentPlaceHolder1_Results_ctl07_lnkView" class="lblentrylink" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$Results$ctl07$lnkView','')" style="display:inline-block;width:10%;">View Lobbyist</a>
+                         </td><td class="highlightcolor" align="left" valign="middle" style="width:30%;">
+                            <span id="ctl00_ContentPlaceHolder1_Results_ctl07_lblLName" class="lblentry">THOMPSON</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results_ctl07_comma" class="lblentry" style="font-size:Small;">, </span>
+                            <span id="ctl00_ContentPlaceHolder1_Results_ctl07_lblFName" class="lblentry">ABIGAIL HEYS</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results_ctl07_lblMName" class="lblentry">BATES</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results_ctl07_lblSuffix" class="lblentry"></span>
+                          </td><td align="left" valign="middle" style="width:50%;">
+                            <div id="ctl00_ContentPlaceHolder1_Results_ctl07_test1"></div>
+                         <span class="lblentry">793 SAWYER ROAD</span><span><br /></span><span class="lblentry">ROOM #2233</span><span><br /></span><span class="lblentry">MARIETTA</span><span class="lblentry">,</span><span class="lblentry">GA</span><span class="lblentry"> </span><span class="lblentry">30062</span></td>
+		</tr><tr class="gridviewrow" style="height:55px;">
+			<td align="left" valign="middle" style="width:10%;">
+                         <a id="ctl00_ContentPlaceHolder1_Results_ctl08_lnkView" class="lblentrylink" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$Results$ctl08$lnkView','')" style="display:inline-block;width:10%;">View Lobbyist</a>
+                         </td><td class="highlightcolor" align="left" valign="middle" style="width:30%;">
+                            <span id="ctl00_ContentPlaceHolder1_Results_ctl08_lblLName" class="lblentry">THOMPSON</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results_ctl08_comma" class="lblentry" style="font-size:Small;">, </span>
+                            <span id="ctl00_ContentPlaceHolder1_Results_ctl08_lblFName" class="lblentry">JOE</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results_ctl08_lblMName" class="lblentry">DAN </span>
+                            <span id="ctl00_ContentPlaceHolder1_Results_ctl08_lblSuffix" class="lblentry"></span>
+                          </td><td align="left" valign="middle" style="width:50%;">
+                            <div id="ctl00_ContentPlaceHolder1_Results_ctl08_test1"></div>
+                         <span class="lblentry">191 PEACHTREE STREET NE</span><span><br /></span><span class="lblentry">SUITE 700</span><span><br /></span><span class="lblentry">ALTANTA</span><span class="lblentry">,</span><span class="lblentry">GA</span><span class="lblentry"> </span><span class="lblentry">30303</span></td>
+		</tr><tr class="gridviewalterrow" style="height:55px;">
+			<td align="left" valign="middle" style="width:10%;">
+                         <a id="ctl00_ContentPlaceHolder1_Results_ctl09_lnkView" class="lblentrylink" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$Results$ctl09$lnkView','')" style="display:inline-block;width:10%;">View Lobbyist</a>
+                         </td><td class="highlightcolor" align="left" valign="middle" style="width:30%;">
+                            <span id="ctl00_ContentPlaceHolder1_Results_ctl09_lblLName" class="lblentry">THOMPSON</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results_ctl09_comma" class="lblentry" style="font-size:Small;">, </span>
+                            <span id="ctl00_ContentPlaceHolder1_Results_ctl09_lblFName" class="lblentry">KIRBY</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results_ctl09_lblMName" class="lblentry">A.</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results_ctl09_lblSuffix" class="lblentry"></span>
+                          </td><td align="left" valign="middle" style="width:50%;">
+                            <div id="ctl00_ContentPlaceHolder1_Results_ctl09_test1"></div>
+                         <span class="lblentry">1155 PEACHTREE STREET</span><span><br /></span><span class="lblentry">SUITE 900</span><span><br /></span><span class="lblentry">ATLANTA</span><span class="lblentry">,</span><span class="lblentry">GA</span><span class="lblentry"> </span><span class="lblentry">30309</span></td>
+		</tr><tr class="gridviewrow" style="height:55px;">
+			<td align="left" valign="middle" style="width:10%;">
+                         <a id="ctl00_ContentPlaceHolder1_Results_ctl10_lnkView" class="lblentrylink" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$Results$ctl10$lnkView','')" style="display:inline-block;width:10%;">View Lobbyist</a>
+                         </td><td class="highlightcolor" align="left" valign="middle" style="width:30%;">
+                            <span id="ctl00_ContentPlaceHolder1_Results_ctl10_lblLName" class="lblentry">THOMPSON</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results_ctl10_comma" class="lblentry" style="font-size:Small;">, </span>
+                            <span id="ctl00_ContentPlaceHolder1_Results_ctl10_lblFName" class="lblentry">OWEN</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results_ctl10_lblMName" class="lblentry">GRAHAM</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results_ctl10_lblSuffix" class="lblentry"></span>
+                          </td><td align="left" valign="middle" style="width:50%;">
+                            <div id="ctl00_ContentPlaceHolder1_Results_ctl10_test1"></div>
+                         <span class="lblentry">PO BOX 11838</span><span><br /></span><span class="lblentry">ATLANTA</span><span class="lblentry">,</span><span class="lblentry">GA</span><span class="lblentry"> </span><span class="lblentry">30355</span></td>
+		</tr><tr class="gridviewalterrow" style="height:55px;">
+			<td align="left" valign="middle" style="width:10%;">
+                         <a id="ctl00_ContentPlaceHolder1_Results_ctl11_lnkView" class="lblentrylink" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$Results$ctl11$lnkView','')" style="display:inline-block;width:10%;">View Lobbyist</a>
+                         </td><td class="highlightcolor" align="left" valign="middle" style="width:30%;">
+                            <span id="ctl00_ContentPlaceHolder1_Results_ctl11_lblLName" class="lblentry">THOMPSON</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results_ctl11_comma" class="lblentry" style="font-size:Small;">, </span>
+                            <span id="ctl00_ContentPlaceHolder1_Results_ctl11_lblFName" class="lblentry">RICK</span>
+                            <span id="ctl00_ContentPlaceHolder1_Results_ctl11_lblMName" class="lblentry"></span>
+                            <span id="ctl00_ContentPlaceHolder1_Results_ctl11_lblSuffix" class="lblentry"></span>
+                          </td><td align="left" valign="middle" style="width:50%;">
+                            <div id="ctl00_ContentPlaceHolder1_Results_ctl11_test1"></div>
+                         <span class="lblentry">1076 CANTON STREET LOWER LEVEL</span><span><br /></span><span class="lblentry">ROSWELL</span><span class="lblentry">,</span><span class="lblentry">GA</span><span class="lblentry"> </span><span class="lblentry">30075</span></td>
+		</tr>
+	</table>
+</div>
+                <br />
+                
+                
+                <div>
+
+</div>
+                </td></tr></table>
+                
+                 <table style="text-align:center; margin: 0 auto; width:100% ">
+                    <tr> 
+                        <td style="text-align:center; width:100%"><input type="submit" name="ctl00$ContentPlaceHolder1$btnSearch" value="New Search" id="ctl00_ContentPlaceHolder1_btnSearch" class="submit" style="font-weight:bold;width:150px;" /></td>        
+                    </tr>
+                 </table><br />
+    </div>
+
+        </td> 
+    </tr>
+    <!-- FOOTER -->
+    </table>
+<!-- END FOOTER -->  
+<!-- FOOTER LINKS -->  
+</form>
+<!-- FOOTER LINKS --> 
+</body>
+<script type="text/javascript">
+     _uacct="UA-2397276-1";
+     urchinTracker();
+function TABLE1_onclick() {
+}
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-37326765-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<script type='text/javascript'>
+window.__lo_site_id = 51939;
+
+               (function() {
+                              var wa = document.createElement('script'); wa.type = 'text/javascript'; wa.async = true;
+                              wa.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://cdn') + '.luckyorange.com/w.js';
+                              var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wa, s);
+                 })();
+               </script>
+
+</html>

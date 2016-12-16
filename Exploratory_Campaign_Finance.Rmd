@@ -26,4 +26,25 @@ Wow, this is really nicely formatted!
 For future automated processing, here's the element that yielded the csv file:
 <input type="image" name="ctl00$ContentPlaceHolder1$Export" id="ctl00_ContentPlaceHolder1_Export" src="../images/btnexcel.gif" style="border-width:0px;">
 
+```{r}
+nafuck <- sapply(as.numeric(fm$Cash_Amount),sum)
+```
+```{r}
+nafuck
+```
+
+12-15-2016
+===============
+```{r}
+str(fm)
+```
+
+For [this page](http://media.ethics.ga.gov/search/Lobbyist/Lobbyist_results.aspx?&Year=2016&LastName=Thompson&FirstName=&City=&FilerID=), examining the "View Lobbyist element".  The href is a call to doPostBack - so I wonder what I have to do on the page to clikc that link.
+
+```{r}
+postbackexample<- "javascript:__doPostBack('ctl00$ContentPlaceHolder1$Results$ctl02$lnkView','')"
+```
+Here's a [stack](http://stackoverflow.com/questions/1418000/how-to-click-a-link-that-has-javascript-dopostback-in-href) for finding this out in python.
+
+
 
