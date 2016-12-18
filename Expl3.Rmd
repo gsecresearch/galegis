@@ -1,0 +1,10 @@
+---
+title: "Explore_3"
+output: html_notebook
+---
+
+Entering a candidate name on [this page](http://media.ethics.ga.gov/search/Campaign/Campaign_ByContributions.aspx) will result in their candidate ID number.  The list also returns an excel table of contributions.  
+
+HTML Associated with the Excel results button is:
+
+<input type="image" name="ctl00$ContentPlaceHolder1$Export" id="ctl00_ContentPlaceHolder1_Export" src="../images/btnexcel.gif" style="border-width:0px;">
