@@ -1,0 +1,4 @@
+Python notes
+
+Had to drop the Chromedriver exe in python path which is C:\Users\Devin\AppData\Local\Programs\Python\Python36
+
