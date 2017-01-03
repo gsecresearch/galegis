@@ -1,0 +1,3 @@
+Reverse_Legislation
+
+Take the legislation of interest and find any names, group names, lobbyist names that are connected with it.  Then query those individuals and groups to get detailed info on financials and group membership.  

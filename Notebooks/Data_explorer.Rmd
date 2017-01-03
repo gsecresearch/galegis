@@ -1,0 +1,14 @@
+---
+title: "Data Explorer"
+output: html_notebook
+---
+
+ 
+
+```{r}
+library(data.table)
+da <- fread("C:/git/galegis/Data/Individual/PFD.csv")
+str(da)
+```
+
+
