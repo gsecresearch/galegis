@@ -1,1 +1,5 @@
 http://media.ethics.ga.gov/search/Campaign/CCDR_Report_Summary.aspx?NameID=631&FilerID=C2010000349&CDRID=124345&Name=Millar,%20Fran%20&Year=2016&Report=December%2031st%20-%20Election%20Year
+
+How does CDRID Iterate across time? This is June 2016:  
+http://media.ethics.ga.gov/Search/Campaign/Campaign_ByContributions_RFR.aspx?NameID=631&FilerID=C2010000349&CDRID=120663&Name=Millar,%20Fran%20&Year=2016&Report=June%2030th%20-%20Election%20Year  
+
